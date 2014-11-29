@@ -1,0 +1,159 @@
+html, body {
+	background-color: brown;
+	margin: auto;
+	padding: 0;
+	border: solid 1px;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	height: 1600px;
+	width: 900px;
+	overflow: hidden;
+}
+
+#board {
+margin-left: -5%;
+margin-top: 50%;
+}
+
+
+.square {
+	height: 100px;
+	width: 100px;
+	position: absolute;
+}
+
+.light {
+	background-color: #FFCC66;
+}
+
+.dark {
+	background-color: #663300;
+}
+
+.aFile {
+margin-left: 100px;
+}
+
+.bFile {
+margin-left: 200px;
+}
+
+.cFile {
+margin-left: 300px;
+}
+
+.dFile {
+margin-left: 400px;
+}
+
+.eFile {
+margin-left: 500px;
+}
+
+.fFile {
+margin-left: 600px;
+}
+
+.gFile {
+margin-left: 700px;
+}
+
+.hFile {
+margin-left: 800px;
+}
+
+.firstRank {
+margin-top: 700px;
+}
+
+.secondRank {
+margin-top: 600px;
+}
+
+.thirdRank {
+margin-top: 500px;
+}
+
+.fourthRank {
+margin-top: 400px;
+}
+
+.fifthRank {
+margin-top: 300px;
+}
+
+.sixthRank {
+margin-top: 200px;
+}
+
+.seventhRank {
+margin-top: 100px;
+}
+
+.eighthRank {
+margin-top: 0px;
+}
+
+.white.pawn{
+content: url(../images/white_pawn.png);
+}
+
+.white.knight{
+content: url(../images/white_knight.png)
+}
+
+.white.bishop{
+content: url(../images/white_bishop.png);
+}
+
+.white.rook{
+content: url(../images/white_rook.png);
+}
+
+.white.queen{
+content: url(../images/white_queen.png);
+}
+
+.white.king{
+content: url(../images/white_king.png);
+}
+
+.black.pawn{
+content: url(../images/black_pawn.png);
+}
+
+.black.knight{
+content: url(../images/black_knight.png);
+}
+
+.black.bishop{
+content: url(../images/black_bishop.png);
+}
+
+.black.rook{
+content: url(../images/black_rook.png);
+}
+
+.black.queen{
+content: url(../images/black_queen.png);
+}
+
+.black.king{
+content: url(../images/black_king.png);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
