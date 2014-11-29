@@ -32,6 +32,7 @@ $(document).ready(function(){
 			selectOrMove = false;
 			testLegal(toBeMoved, toMove);
 		} else {
+			$(this).css("background-color", "#114B98");
 			oldSquare = this.id;
 			toBeMoved[0] = parseInt(this.id[1]-1);
 			switch (this.id[0]) {
@@ -168,9 +169,9 @@ function testLegal(from, to){
 				return move(fromPiece, from, to);
 			} else if(from[0] == 4 && (to[1] - from[1] == 1 || to[1]-from[1] == -1) && to[0] == 5 && toPiece.passant === true){	
 				return move(fromPiece, from, to);
-			} else if(from[1] == to[1] && to[0] - from[0] == 1){
+			} else if(from[1] == to[1] && to[0] - from[0] == 1 && toPiece == emptySquare){
 				return move(fromPiece, from, to);
-			} else if((to[1] - from[1] == 1 || to[1]-from[1] == -1) && to[0] - from[0] == 1){
+			} else if((to[1] - from[1] == 1 || to[1]-from[1] == -1) && to[0] - from[0] == 1 && toPiece != emptySquare){
 				return move(fromPiece, from, to);
 			}
 		} else if(fromPiece.color == black){
@@ -179,9 +180,9 @@ function testLegal(from, to){
 				return move(fromPiece, from, to);
 			} else if(from[0] == 3 && (to[1] - from[1] == 1 || to[1]-from[1] == -1) && to[0] == 2 && toPiece.passant === true){
 				return move(fromPiece, from, to);
-			} else if(from[1] == to[1] && to[0] - from[0] == -1){
+			} else if(from[1] == to[1] && to[0] - from[0] == -1 && toPiece == emptySquare){
 				return move(fromPiece, from, to);
-			} else if((to[1] - from[1] == 1 || to[1]-from[1] == -1) && to[0] - from[0] == -1){
+			} else if((to[1] - from[1] == 1 || to[1]-from[1] == -1) && to[0] - from[0] == -1 && toPiece != emptySquare){
 				return move(fromPiece, from, to);
 			}
 		}
