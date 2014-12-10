@@ -158,7 +158,7 @@ function testLegal(from, to){
 	if(fromPiece == emptySquare){
 		return;
 	}
-	if(toPiece != emptySquare && fromPiece.color == toPiece.color){
+	if(toPiece != emptySquare && fromPiece.color == toPiece.color && fromPiece.color == turn){
 		return;
 	}
 
