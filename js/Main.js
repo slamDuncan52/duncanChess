@@ -1,6 +1,7 @@
 $(document).ready(function(){ 
 	$(".square").on("click", function() {
-		if(selectOrMove){
+		if(selectOrMove == MOVE){
+			$(".square").css("background-color", "");
 			newSquare = this.id;
 			toMove[0] = parseInt(this.id[1]-1);
 			switch (this.id[0]) {
@@ -29,7 +30,7 @@ $(document).ready(function(){
 					toMove[1] = 7;
 				break;
 			}
-			selectOrMove = false;
+			selectOrMove = SELECT;
 			testLegal(toBeMoved, toMove);
 		} else {
 			$(this).css("background-color", "#114B98");
@@ -61,13 +62,15 @@ $(document).ready(function(){
 					toBeMoved[1] = 7;
 				break;
 			}
-			selectOrMove = true;
+			selectOrMove = MOVE;
 		}
 	});
 });
 
-var turn = true;	
-var selectOrMove = false;
+var turn = true;
+var SELECT = true;
+var MOVE = false;
+var selectOrMove = SELECT;
 var legal = false;
 var toBeMoved = [-1,-1];
 var toMove = [-1,-1];
@@ -114,7 +117,7 @@ var wp8 = new piece(white, pawn, 1, 7, "wp8", false);
 
 var wn1 = new piece(white, knight, 0, 1, "wn1", null);
 var wn2 = new piece(white, knight, 0, 6, "wn2", null);
-var wb1 = new piece(white, bishop, 0, 2, "wb1", null );
+var wb1 = new piece(white, bishop, 0, 2, "wb1", null);
 var wb2 = new piece(white, bishop, 0, 5, "wb2", null);
 var wr1 = new piece(white, rook, 0, 0, "wr1", null);
 var wr2 = new piece(white, rook, 0, 7, "wr2", null);
@@ -158,10 +161,12 @@ function testLegal(from, to){
 	if(fromPiece == emptySquare){
 		return;
 	}
-	if(toPiece != emptySquare && fromPiece.color == toPiece.color && fromPiece.color == turn){
+	if(toPiece != emptySquare && fromPiece.color == toPiece.color){
 		return;
 	}
-
+	if(fromPiece.color != turn){
+		return;
+	}	
 	if(fromPiece.type == pawn){
 		if(fromPiece.color == white){
 			if(from[0] == 1 && toPiece == emptySquare && to[0] == 3){
@@ -222,8 +227,12 @@ function updateBoard(toEmpty, toChange, piece){
 	$("#" + toChange).removeClass("black white pawn knight bishop rook queen king");
 	if(piece.color === white){
 		$("#" + toChange).addClass("white");
+		$("#turnMarker").removeClass("white");
+		$("#turnMarker").addClass("black");
 	} else {
 		$("#" + toChange).addClass("black");
+		$("#turnMarker").removeClass("black");
+		$("#turnMarker").addClass("white");
 	}
 	if(piece.type === pawn){
 		$("#" + toChange).addClass("pawn");
@@ -238,9 +247,4 @@ function updateBoard(toEmpty, toChange, piece){
 	} else if(piece.type === king){
 		$("#" + toChange).addClass("king");
 	}
-
-
-
-
-
 }
