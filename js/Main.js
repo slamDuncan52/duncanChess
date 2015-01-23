@@ -6,28 +6,28 @@ $(document).ready(function(){
 			switch (this.id[0]) {
 				case 'a':
 					toMove[1] = 0;
-				break;
+					break;
 				case 'b':
 					toMove[1] = 1;
-				break;
+					break;
 				case 'c':
 					toMove[1] = 2;
-				break;
+					break;
 				case 'd':
 					toMove[1] = 3;
-				break;
+					break;
 				case 'e':
 					toMove[1] = 4;
-				break;
+					break;
 				case 'f':
 					toMove[1] = 5;
-				break;
+					break;
 				case 'g':
 					toMove[1] = 6;
-				break;
+					break;
 				case 'h':
 					toMove[1] = 7;
-				break;
+					break;
 			}
 			selectOrMove = false;
 			testLegal(toBeMoved, toMove);
@@ -38,28 +38,28 @@ $(document).ready(function(){
 			switch (this.id[0]) {
 				case 'a':
 					toBeMoved[1] = 0;
-				break;
+					break;
 				case 'b':
 					toBeMoved[1] = 1;
-				break;
+					break;
 				case 'c':
 					toBeMoved[1] = 2;
-				break;
+					break;
 				case 'd':
 					toBeMoved[1] = 3;
-				break;
+					break;
 				case 'e':
 					toBeMoved[1] = 4;
-				break;
+					break;
 				case 'f':
 					toBeMoved[1] = 5;
-				break;
+					break;
 				case 'g':
 					toBeMoved[1] = 6;
-				break;
+					break;
 				case 'h':
 					toBeMoved[1] = 7;
-				break;
+					break;
 			}
 			selectOrMove = true;
 		}
@@ -142,10 +142,10 @@ var bk = new piece(black, king, 7, 4, "bk", null);
 var board = [
 	[wr1, wn1, wb1, wq, wk, wb2, wn2, wr2],
 	[wp1, wp2, wp3, wp4, wp5, wp6, wp7, wp8],
-	[emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, ],
-	[emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, ],
-	[emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, ],
-	[emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, ],
+	[emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare],
+	[emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare],
+	[emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare],
+	[emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare, emptySquare],
 	[bp1, bp2, bp3, bp4, bp5, bp6, bp7, bp8],
 	[br1, bn1, bb1, bq, bk, bb2, bn2, br2]
 ];
