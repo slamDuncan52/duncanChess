@@ -18,11 +18,29 @@ margin-left: -5%;
 margin-top: 50%;
 }
 
+#turnMarker {
+height: 30px;
+width: 30px;
+position: absolute;
+}
+
+#turnMarker.white {
+margin-left: 6%;
+margin-top: 90%;
+background-color: white;
+}
+
+#turnMarker.black {
+margin-left: 6%;
+margin-top: -7%;
+background-color: black;
+}
 
 .square {
 	height: 100px;
 	width: 100px;
 	position: absolute;
+	box-sizing: border-box;
 }
 
 .light {
